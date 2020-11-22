@@ -1,0 +1,31 @@
+int timer = 300;
+int power = A0;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+   pinMode(6, OUTPUT);
+  pinMode(power, INPUT);
+}
+
+void loop() {
+  int i,j;
+  // put your main code here, to run repeatedly:
+  for(i=2;i<=6;i++)
+  {
+    for(j=2;j<=6;j++)
+    {
+      if (i!=j)
+      {
+        digitalWrite(i, HIGH);
+     digitalWrite(j, LOW);
+    
+      }
+    }
+     delay(timer);
+  }
+  }
