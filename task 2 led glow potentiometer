@@ -1,0 +1,31 @@
+int i,j;
+float mV;
+int readval=A0;
+void setup() {
+  Serial.begin(9600);
+  pinMode(A0,INPUT);
+  for (i=5; i<=9; i++)
+  {
+    pinMode(i,OUTPUT);
+  }
+
+}
+
+void loop() {
+  float pot;
+ pot=analogRead(readval);
+ Serial.println(mV);
+ mV=(5.0/1023.0)*pot;
+ 
+ if(mV>1){
+    for(i=5;i<=5+(int)mV;i++){
+      for(j=5;j<=i;j++){
+      digitalWrite (j,HIGH);
+    delay(100);}
+    }}
+    else   {
+      digitalWrite (5,HIGH);}
+      
+    }
+  
+ 
