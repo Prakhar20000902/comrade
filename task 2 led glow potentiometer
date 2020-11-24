@@ -15,8 +15,7 @@ void loop() {
  mV=(7.0/1023.0)*pot;
  if(mV>5.01){
   tone (10,1000);
-  delay(300);
-  tone (10,200);}
+  delay(300);}
   else{
  if(mV>0.99){
     for(i=5;i<=4+(int)mV;i++){
