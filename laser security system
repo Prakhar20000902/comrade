@@ -1,0 +1,35 @@
+const int buttonpin=13;
+
+int buttonstate=0;
+void setup(){
+  Serial.begin(9600);
+  pinMode(7,OUTPUT);
+  pinMode(8,OUTPUT);
+  pinMode(12,OUTPUT);
+  pinMode(A0,INPUT);
+  pinMode(buttonpin,INPUT);
+}
+void loop()
+{
+  buttonstate =digitalRead (buttonpin);
+  if(buttonstate==HIGH)
+  {
+    int sensorvalue=analogRead(A0);
+    float voltage=sensorvalue*(5.0/1023);
+    Serial.println(voltage);
+    if(voltage>4.0)
+    {
+      digitalWrite(7,HIGH);
+      delay(200);
+      tone(8,500);
+      delay(200);
+      tone(8,0);
+    }}
+    else
+    {
+      digitalWrite(12,HIGH);
+    delay(200);
+    digitalWrite(12,LOW);
+    delay(200);
+    }}
+   
